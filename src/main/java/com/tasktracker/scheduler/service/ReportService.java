@@ -22,7 +22,7 @@ public class ReportService {
     private final KafkaTemplate<String, EmailEventDto> kafkaTemplate;
 
 
-    @Scheduled(cron = "0/30 * * * * *")
+    @Scheduled(cron = "0 0 0 * * *")
     public void sendDailyReports() {
         LocalDateTime startOfYesterday = LocalDate.now().minusDays(1).atStartOfDay();
         LocalDateTime endOfYesterday = LocalDate.now().atStartOfDay();
